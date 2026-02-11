@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Configuration status="INFO"> 
+<!-- ================= APPENDERS ================= --> 
+<Appenders> 
+	<!-- Console Appender (prints logs on console) --> 
+	<Console name="Console" target="SYSTEM_OUT"> 
+	<PatternLayout 
+		pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger - %msg%n"/> 
+		</Console> 
+		<!-- Rolling File Appender (creates daily log files) --> 
+		<RollingFile name="RollingFile" 
+		fileName="logs/app.log" 
+		filePattern="logs/app-%d{yyyy-MM-dd}.log"> 
+		<PatternLayout 
+	pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %msg%n"/> 
+	<!-- Rolling policy --> 
+		<Policies> 
+		<TimeBasedTriggeringPolicy interval="1" modulate="true"/> 
+		</Policies> 
+	</RollingFile> 
+</Appenders> 
+<!-- ================= LOGGERS ================= --> 
+<Loggers> 
+<!-- Root logger --> 
+<Root level="info"> 
+<AppenderRef ref="Console"/> 
+<AppenderRef ref="RollingFile"/> 
+</Root> 
+</Loggers> 
+</Configuration>

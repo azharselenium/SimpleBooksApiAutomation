@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Simple Books API Automation Framework">
+
+    <test name="Order Flow Test">
+        <classes>
+            <class name="com.tests.OrderFlowTest"/>
+        </classes>
+    </test>
+
+</suite>

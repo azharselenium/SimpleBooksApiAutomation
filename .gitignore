@@ -1,0 +1,9 @@
+.settings/
+.project
+logs/
+reports/
+target/
+*.log
+*.class
+.idea/
+test-output/
